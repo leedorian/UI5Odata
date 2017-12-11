@@ -1,0 +1,45 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sampletestOData.controller.Main" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					
+					<VBox items="{path:'/Categories',parameters:{expand:'Products',$updateGroupId : 'myGroup'}}">
+						<Panel expandable="true" headerText="{CategoryName}">
+							<content>
+								<!--<Image src="{path:'Picture', formatter:'.binaryIMG'}"></Image>-->
+								<Table id="__table0" items="{/Products}" growing="true">
+									<items>
+										<ColumnListItem id="__item0">
+											<cells>
+												<Text text="{ProductID}" id="__text1"/>
+												<Text text="{ProductName}" id="__text0"/>
+												<Text text="{UnitPrice}" id="__text2"/></cells>
+										</ColumnListItem>
+									</items>
+									<columns>
+										<Column id="__column0">
+											<header>
+												<Label text="Product ID" id="__label0"/>
+											</header>
+										</Column>
+										<Column id="__column1">
+											<header>
+												<Label text="Product Name" id="__label1"/>
+											</header>
+										</Column>
+										<Column id="__column2">
+											<header>
+												<Label text="UnitPrice" id="__label2"/>
+											</header>
+										</Column>
+									</columns>
+								</Table>
+							</content>
+						</Panel>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
